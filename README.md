@@ -14,10 +14,10 @@ All the necessary app has been recorded in package.json thus using "npm install"
 
 Technologies Used : 
 
-React - Front End. 
-MongDB - As Database.
-Express and Node - To activate and facilitate server connection.
-Nodemon - To automate the monitoring changes of the server
-Axios -  To make HTTP requests from node. js
-Cors- Data transfers between browsers and servers
+-React - Front End. 
+-MongDB - As Database.
+-Express and Node - To activate and facilitate server connection.
+-Nodemon - To automate the monitoring changes of the server
+-Axios -  To make HTTP requests from node. js
+-Cors- Data transfers between browsers and servers
 
