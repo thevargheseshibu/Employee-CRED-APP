@@ -2,23 +2,23 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
-const FoodeModel = require("./models/Food");
+const EmpModel = require("./models/Employee");
 app.use(express.json());
 app.use(cors());
 
 var uri =
-  "mongodb://creduser:cred@cluster0-shard-00-00.ozepx.mongodb.net:27017,cluster0-shard-00-01.ozepx.mongodb.net:27017,cluster0-shard-00-02.ozepx.mongodb.net:27017/food?ssl=true&replicaSet=atlas-innouw-shard-0&authSource=admin&retryWrites=true&w=majority";
+  "mongodb://creduser:cred@cluster0-shard-00-00.ozepx.mongodb.net:27017,cluster0-shard-00-01.ozepx.mongodb.net:27017,cluster0-shard-00-02.ozepx.mongodb.net:27017/employee?ssl=true&replicaSet=atlas-innouw-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 mongoose.connect(uri, { useNewUrlParser: true });
 
 app.post("/insert", async (req, res) => {
-  const foodname = req.body.foodName;
-  const days = req.body.days;
+  const empName = req.body.empName;
+  const empPH = req.body.empPH;
 
-  const food = new FoodeModel({ foodName: foodname, daysSinceIAte: days });
+  const employee = new EmpModel({ empName: empName, empPH: empPH });
 
   try {
-    await food.save();
+    await employee.save();
     res.send("inserdata");
   } catch (err) {
     console.log(err);
@@ -26,19 +26,19 @@ app.post("/insert", async (req, res) => {
 });
 
 app.put("/update", async (req, res) => {
-  const newFoodName = req.body.newFoodName;
+  const newempName = req.body.newempName;
   const id = req.body.id;
 
   try {
-    await FoodeModel.findById(id, (err, updatedFood) => {
-      updatedFood.foodName = newFoodName;
-      updatedFood.save();
+    await EmpModel.findById(id, (err, updatedEmp) => {
+      updatedEmp.empName = newempName;
+      updatedEmp.save();
       res.send("update");
       if (err) {
         res.send("Err update");
       }
     });
-    await food.save();
+    await employee.save();
     res.send("inserdata");
   } catch (err) {
     console.log(err);
@@ -46,7 +46,7 @@ app.put("/update", async (req, res) => {
 });
 
 app.get("/read", async (req, res) => {
-  FoodeModel.find({}, (err, result) => {
+  EmpModel.find({}, (err, result) => {
     if (err) {
       res.send(err);
     } else {
@@ -57,7 +57,7 @@ app.get("/read", async (req, res) => {
 
 app.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
-  await FoodeModel.findByIdAndRemove(id).exec();
+  await EmpModel.findByIdAndRemove(id).exec();
   res.send("deleted");
 });
 
