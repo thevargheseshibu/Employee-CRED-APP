@@ -1,5 +1,5 @@
 # WELCOME TO EMPLOYEE CRUD APP
-## This is a demo APP to illustrate the working of MERN using simple Employee CRUD Operation.
+## This is a demo APP to illustrate the working of MERN using simple Employee CRUD Operation.A Video of the working app has been added to the repository.
 
 
 
@@ -12,12 +12,12 @@ All the necessary app has been recorded in package.json thus using "npm install"
 - In the react application "Enter the Employee name" and "Employee Number" to record and click submit to record those value to mongodb .
 - Use the update functionality under db records to update the Employee and respectively use the delete button to delete the record as well.
 
-#Technologies Used : 
+# Technologies Used : 
 
-#-React - Front End. 
-#-MongDB - As Database.
-#-Express and Node - To activate and facilitate server connection.
-#-Nodemon - To automate the monitoring changes of the server
-#-Axios -  To make HTTP requests from node. js
-#-Cors- Data transfers between browsers and servers
+# -React - Front End. 
+# -MongDB - As Database.
+# -Express and Node - To activate and facilitate server connection.
+# -Nodemon - To automate the monitoring changes of the server
+# -Axios -  To make HTTP requests from node. js
+# -Cors- Data transfers between browsers and servers
 
