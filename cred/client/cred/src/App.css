@@ -1,0 +1,17 @@
+.App {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  width: 50%;
+  border: 3px solid green;
+  padding-top: 10px;
+}
+
+.db {
+  margin: auto;
+  text-align: center;
+  margin-top: 10px;
+  width: 50%;
+  border: 3px solid violet;
+  padding-top: 10px;
+}
